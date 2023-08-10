@@ -37,7 +37,7 @@ int main() {
                 if (str[i] == '0')
                     f = 'c';
                 else if (str[i] == '1')
-                    f = 'a';
+                    f = 'd';
                 break;
 
             case 'c':
@@ -49,14 +49,14 @@ int main() {
 
             case 'd':
                 if (str[i] == '0')
-                    f = 'a';
+                    f = 'b';
                 else if (str[i] == '1')
                     f = 'c';
                 break;
         }
     }
 
-    if (f == 'c')
+    if (f == 'a' || f == 'c')
         fprintf(destinationFile, "String is accepted\n");
     else
         fprintf(destinationFile, "String is not accepted\n");
@@ -64,7 +64,7 @@ int main() {
     fclose(sourceFile);
     fclose(destinationFile);
 
-    printf("Result saved in destination_file.txt.\n");
+    printf("Result saved in destination.txt.\n");
 
     return 0;
 }
