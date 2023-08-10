@@ -1,12 +1,11 @@
-// DFA to accept set of all strings ending with two symbols of same type
+// DFA to accept set of all strings ending with two symbols of the same type
 
 #include <stdio.h>
 #include <stdlib.h>
-#define max 100
 
 int main() {
     FILE *sourceFile, *destinationFile;
-    char str[max], f = 'a';
+    char str[100], f = 'a';
     int i;
 
     sourceFile = fopen("source.txt", "r");
@@ -22,44 +21,21 @@ int main() {
         return 1;
     }
 
-    fscanf(sourceFile, "%s", str);
+    fgets(str, 100, sourceFile);
 
     for (i = 0; str[i] != '\0'; i++) {
-        switch (f) {
-            case 'a':
-                if (str[i] == '0')
-                    f = 'b';
-                else if (str[i] == '1')
-                    f = 'd';
-                break;
-
-            case 'b':
-                if (str[i] == '0')
-                    f = 'c';
-                else if (str[i] == '1')
-                    f = 'd';
-                break;
-
-            case 'c':
-                if (str[i] == '0')
-                    f = 'a';
-                else if (str[i] == '1')
-                    f = 'a';
-                break;
-
-            case 'd':
-                if (str[i] == '0')
-                    f = 'b';
-                else if (str[i] == '1')
-                    f = 'c';
-                break;
+        if (f == str[i]) {
+            continue;
         }
+
+        f = str[i];
     }
 
-    if (f == 'a' || f == 'c')
+    if (str[i - 1] == f && str[i - 1] == str[i - 2]) {
         fprintf(destinationFile, "String is accepted\n");
-    else
+    } else {
         fprintf(destinationFile, "String is not accepted\n");
+    }
 
     fclose(sourceFile);
     fclose(destinationFile);
