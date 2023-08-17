@@ -1,4 +1,4 @@
-// DFA to accept even number of zero's
+// DFA to accept even number of zero's and one's
 
 #include <stdio.h>
 #include <stdlib.h>
