@@ -1,0 +1,13 @@
+Identifier: a
+Relational Operator: =
+Punctuation: (
+Identifier: b
+Arithmetic Operator: +
+Identifier: c
+Punctuation: )
+Error: Invalid token
+Punctuation: (
+Identifier: c
+Arithmetic Operator: -
+Integer: 20
+Punctuation: )
