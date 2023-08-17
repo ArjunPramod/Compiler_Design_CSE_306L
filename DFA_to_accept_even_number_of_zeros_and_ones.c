@@ -30,12 +30,26 @@ int main() {
                 if (str[i] == '0')
                     f = 'b';
                 else if (str[i] == '1')
-                    f = 'a';
+                    f = 'c';
                 break;
 
             case 'b':
                 if (str[i] == '0')
                     f = 'a';
+                else if (str[i] == '1')
+                    f = 'd';
+                break;
+
+            case 'c':
+                if (str[i] == '0')
+                    f = 'd';
+                else if (str[i] == '1')
+                    f = 'a';
+                break;
+
+            case 'd':
+                if (str[i] == '0')
+                    f = 'c';
                 else if (str[i] == '1')
                     f = 'b';
                 break;
@@ -50,7 +64,7 @@ int main() {
     fclose(sourceFile);
     fclose(destinationFile);
 
-    printf("Result saved in destination_file.txt.\n");
+    printf("Result saved in destination.txt.\n");
 
     return 0;
 }
